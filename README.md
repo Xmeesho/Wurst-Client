@@ -1,2 +1,2 @@
 # Wurst-Client website
-The official website of the Wurst Client.
+The **new** official website of the Wurst Client. <http://new.wurst-client.tk/>
