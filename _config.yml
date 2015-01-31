@@ -1,0 +1,14 @@
+exclude:
+- README.md
+
+timezone: Europe/Berlin
+
+title: Wurst Client
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
