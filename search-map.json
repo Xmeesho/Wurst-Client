@@ -3,6 +3,7 @@ layout: none
 ---
 [
 	{% for element in site.pages %}
+	{% unless element.title == "" or element.title == "Error 404 (not found)" %}
 	{
 		"title": "{{ element.title | escape }}",
 		"exerpt": "{{ element.exerpt | strip_html }}",
@@ -11,5 +12,6 @@ layout: none
 		"url": "{{ site.baseurl }}{{ element.url }}",
 		"date": "{{ element.date }}"
 	} {% unless forloop.last %},{% endunless %}
+	{% endunless %}
 	{% endfor %}
 ]
