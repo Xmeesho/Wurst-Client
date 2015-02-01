@@ -2,7 +2,7 @@
 layout: none
 ---
 [
-{% for element in site.pages | where url != "/search-map.json" and url != "/404.html" %}{% comment %}
+{% for element in site.pages | where url != "/search-map.json" | where url != "/404.html" %}{% comment %}
 {% endcomment %}  {
     "title": "{{ element.title }}",
     "content": "{{ element.content | strip_html | strip_newlines | remove: "	" | remove: "\"" }}",
