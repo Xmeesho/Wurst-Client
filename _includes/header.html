@@ -28,15 +28,16 @@
 					</ul>
 				</li>
 			</ul>
-			<form action="//www.google.com/cse/publicurl" target="_blank" class="navbar-form navbar-right" role="search">
-				<div class="input-group">
-					<input name="cx" type="hidden" value="002430190181643477242:3ojmsjysb74">
-					<input type="text" name="q" class="form-control" placeholder="Search">
-					<span class="input-group-btn">
-						<button type="submit" class="btn btn-default"><span class="octicon octicon-search"></span></button>
-					</span>
-				</div>
-			</form>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Search <span class="octicon octicon-search"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><input id="search-input" type="text" class="form-control" placeholder="Search"></li>
+						<li class="divider"></li>
+						<li><ul id="search-results"></ul></li>
+					</ul>
+				</li>
+			</ul>
 		</div>
 	</div>
 </nav>
