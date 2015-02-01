@@ -27,12 +27,12 @@
 		SimpleJekyllSearch.init({
 			searchInput: document.getElementById('search-input'),
 			resultsContainer: document.getElementById('search-results'),
-			dataSource: '{{ site.baseurl }}/search-map.json',
+			dataSource: '/search-map.json',
 			searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
 			noResultsText: '<li>No results found.</li>',
 			limit: 20,
 			fuzzy: true,
-		})
+		});
 	</script>
 </body>
 </html>
