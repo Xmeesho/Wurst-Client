@@ -25,6 +25,7 @@
 					</ul>
 				</li>
 			</ul>
+			{% unless include.nosearch %}
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
 					<a style="padding: 8px;" class="dropdown-toggle" data-toggle="dropdown" role="button">
@@ -33,6 +34,7 @@
 					<ul id="search-results" class="dropdown-menu" role="menu"></ul>
 				</li>
 			</ul>
+			{% endunless %}
 		</div>
 	</div>
 </nav>
