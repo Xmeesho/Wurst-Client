@@ -1,0 +1,19 @@
+---
+title: News
+---
+<div id="content" class="container">
+	<h1 class="page-header">{{ page.title }} <span class="mega-octicon octicon-radio-tower"></span></h1>
+	{% for post in paginator.posts %}
+		<div class="panel panel-default">
+			<div class="panel-head">
+				{{ post.title }}
+			</div>
+			<div class="panel-body">
+				{{ post.exerpt }}
+			</div>
+			<div class="panel-footer">
+				<a href="{{ post.url }}">Read more <span class="octicon octicon-arrow-right"></span></a>
+			</div>
+		</div>
+	{% endfor %}
+</div>
