@@ -4,5 +4,23 @@ title: Error 404 (not found)
 <div id="content" class="container">
 	<div class="jumbotron">
 		<h1>{{ page.title }}</h1>
+		<p>The page you were looking for could not be found. Try searching it:</p>
+		<div class="dropdown">
+			<a style="padding: 8px;" class="dropdown-toggle" data-toggle="dropdown" role="button">
+				<input id="404-input" type="text" class="form-control" placeholder="Search">
+			</a>
+			<ul id="404-results" class="dropdown-menu" role="menu"></ul>
+			<script type="text/javascript">
+				SimpleJekyllSearch.init({
+					searchInput: document.getElementById('404-input'),
+					resultsContainer: document.getElementById('404-results'),
+					dataSource: '/search-map.json',
+					searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+					noResultsText: '<li>No results found.</li>',
+					limit: 20,
+					fuzzy: true,
+				});
+		</script>
+		</div>
 	</div>
 </div>
