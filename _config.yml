@@ -13,6 +13,8 @@ paginate: 5
 
 paginate_path: "/news/:num/"
 
+permalink: pretty
+
 defaults:
   -
     scope:
@@ -27,6 +29,3 @@ defaults:
     values:
       layout: "post"
       author: "Alexander01998"
-
-permalink:
-  - post: /news/:year-:month-:day-:title/index.html
