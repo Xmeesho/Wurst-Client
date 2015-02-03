@@ -20,3 +20,10 @@ defaults:
       type: "pages"
     values:
       layout: "default"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Alexander01998"
