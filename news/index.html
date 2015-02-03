@@ -5,7 +5,7 @@ title: News
 	<h1 class="page-header">{{ page.title }} <span class="mega-octicon octicon-radio-tower"></span></h1>
 	{% for post in paginator.posts %}
 		<div class="panel panel-default">
-			<div class="panel-head">
+			<div class="panel-heading">
 				<h2 class="panel-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
 				<p>by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
 			</div>
