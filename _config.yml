@@ -29,4 +29,4 @@ defaults:
       author: "Alexander01998"
 
 permalink:
-  - posts: /news/:year-:month-:day-:title/index.html
+  - post: /news/:year-:month-:day-:title/index.html
