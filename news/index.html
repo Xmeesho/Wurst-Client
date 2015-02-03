@@ -6,14 +6,14 @@ title: News
 	{% for post in paginator.posts %}
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h2 class="panel-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+				<h2 class="panel-title"><a href="{{ post.url | remove: "index.html" }}">{{ post.title }}</a></h2>
 				<p>by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
 			</div>
 			<div class="panel-body">
 				{% if post.exerpt %}{{ post.exerpt }}{% else %}{{ post.content | markdownify }}{% endif %}
 			</div>
 			<div class="panel-footer">
-				<a href="{{ post.url }}">Read more <span class="octicon octicon-arrow-right"></span></a>
+				<a href="{{ post.url | remove: "index.html" }}">Read more <span class="octicon octicon-arrow-right"></span></a>
 			</div>
 		</div>
 	{% endfor %}
