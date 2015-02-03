@@ -12,6 +12,6 @@ layout: none
     "url": "{{ site.baseurl }}{{ element.url | remove: "index.html" }}",
     "date": "{{ element.date }}"
  },
- {}{% endunless %}{% comment %}
-{% endcomment %}{% endfor %}
+{% endunless %}{% comment %}
+{% endcomment %}{% endfor %}{}
 ]
