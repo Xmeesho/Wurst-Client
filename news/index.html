@@ -13,10 +13,31 @@ title: News
 				<p class="text-muted">by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
 			</div>
 			<div class="list-group-item-text panel-body">
-				{{ post.content | truncate: 200, "..." | markdownify }}
+				{{ post.content | truncate: 256, "..." | markdownify }}
 					<a href="{{ post.url | remove: "index.html" }}" class="btn btn-default">Read more <span class="octicon octicon-book"></span></a>
 			</div>
 		</div>
 		{% endfor %}
+		<nav>
+			<ul class="pagination">
+				{% if paginator.previous_page %}
+				<li>
+					<a href="{{ paginator.previous_page_path }}" aria-label="previous page">
+						<span class="octicon octicon-arrow-left"></span>
+					</a>
+				</li>
+				{% endif %}
+				<li class="active">
+					<span>{{ paginator.page }}</span>
+				</li>
+				{% if paginator.next_page %}
+				<li>
+					<a href="{{ paginator.next_page_path }}" aria-label="next page">
+						<span class="octicon octicon-arrow-right"></span>
+					</a>
+				</li>
+				{% endif %}
+			</ul>
+		</nav>
 	</div>
 </div>
