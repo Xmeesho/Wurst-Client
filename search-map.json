@@ -3,10 +3,8 @@ layout: none
 ---
 [
 {% for element in site.pages %}{% comment %}
-{% endcomment %}{% unless element.url == "/404.html"
-  or element.url == "/search-map.json"
-  or element.url contains "/news/"
-%}  {
+{% endcomment %}{% unless element.url == "/404.html" or element.url == "/search-map.json" or element.url contains "/news/" %}{% comment %}
+{% endcomment %}  {
     "title": "{% if element.url == "/index.html" %}Home{% else %}{{ element.title }}{% endif %}",
     "content": "{{ element.content | strip_html | strip_newlines | remove: "	" | escape }}",
     "category": "{{ element.category }}",
