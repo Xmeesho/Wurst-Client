@@ -2,7 +2,11 @@
 title: News
 ---
 <div id="content" class="container">
-	<h1 class="page-header">{{ page.title }} <span class="mega-octicon octicon-radio-tower"></span></h1>
+	<h1 class="page-header">{{ page.title }}
+		<small>
+			<a href="/news/feed.xml" class="pull-right">RSS feed <span class="mega-octicon octicon-rss"></span></a>
+		</small>
+	</h1>
 	<div class="list-group">
 		{% for post in paginator.posts %}
 		<div class="list-group-item">
@@ -22,7 +26,7 @@ title: News
 			<ul class="pagination">
 				{% if paginator.previous_page %}
 				<li>
-					<a href="{{ paginator.previous_page_path }}" aria-label="previous page">
+					<a href="{{ paginator.previous_page_path | remove: "index.html" }}" aria-label="previous page">
 						<span class="octicon octicon-arrow-left"></span>
 					</a>
 				</li>
@@ -32,7 +36,7 @@ title: News
 				</li>
 				{% if paginator.next_page %}
 				<li>
-					<a href="{{ paginator.next_page_path }}" aria-label="next page">
+					<a href="{{ paginator.next_page_path | remove: "index.html" }}" aria-label="next page">
 						<span class="octicon octicon-arrow-right"></span>
 					</a>
 				</li>
