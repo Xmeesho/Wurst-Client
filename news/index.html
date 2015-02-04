@@ -3,18 +3,20 @@ title: News
 ---
 <div id="content" class="container">
 	<h1 class="page-header">{{ page.title }} <span class="mega-octicon octicon-radio-tower"></span></h1>
-	{% for post in paginator.posts %}
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h2 class="panel-title"><a href="{{ post.url | remove: "index.html" }}">{{ post.title }}</a></h2>
-				<p>by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
+	<div class="list-group">
+		{% for post in paginator.posts %}
+		<div class="list-group-item">
+			<div class="panel-heading panel-title">
+				<h2 class="list-group-item-heading">
+					<a href="{{ post.url | remove: "index.html" }}">{{ post.title }}</a>
+				</h2>
+				<p class="text-muted">by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
 			</div>
-			<div class="panel-body">
-				{% if post.exerpt %}{{ post.exerpt }}{% else %}{{ post.content | markdownify }}{% endif %}
-			</div>
-			<div class="panel-footer">
-				<a href="{{ post.url | remove: "index.html" }}">Read more <span class="octicon octicon-arrow-right"></span></a>
+			<div class="list-group-item-text panel-body">
+				{{ post.content | truncate: 200, "..." | markdownify }}
+					<a href="{{ post.url | remove: "index.html" }}" class="btn btn-default">Read more <span class="octicon octicon-book"></span></a>
 			</div>
 		</div>
-	{% endfor %}
+		{% endfor %}
+	</div>
 </div>
