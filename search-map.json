@@ -3,7 +3,7 @@ layout: none
 ---
 [
 {% for element in site.pages %}{% comment %}
-{% endcomment %}{% if element.url | slice: -10, 10 == "index.html" %}{% comment %}
+{% endcomment %}{% if element.url contains "index.html" %}{% comment %}
 {% endcomment %}  {
     "title": "{% if element.url == "/index.html" %}Home{% else %}{{ element.title }}{% endif %}",
     "content": "{{ element.content | strip_html | strip_newlines | remove: "	" | escape }}",
