@@ -2,7 +2,6 @@ exclude:
 - README.md
 
 gems:
-  - jekyll-redirect-from
   - jekyll-sitemap
 
 timezone: Europe/Berlin
