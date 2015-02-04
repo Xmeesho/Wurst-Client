@@ -3,7 +3,7 @@ layout: none
 ---
 [
 {% for element in site.pages %}{% comment %}
-{% endcomment %}{% unless element.url == "/search-map.json" or element.url == "/404.html" %}{% comment %}
+{% endcomment %}{% if {{ element.url | slice: -10, 10 }} == "index.html" %}{% comment %}
 {% endcomment %}  {
     "title": "{% if element.url == "/index.html" %}Home{% else %}{{ element.title }}{% endif %}",
     "content": "{{ element.content | strip_html | strip_newlines | remove: "	" | escape }}",
@@ -12,7 +12,7 @@ layout: none
     "url": "{{ site.baseurl }}{{ element.url | remove: "index.html" }}",
     "date": "{{ element.date }}"
   },
-{% endunless %}{% endfor %}{% for post in site.posts | limit: 20 %}  {
+{% if %}{% endfor %}{% for post in site.posts | limit: 20 %}  {
     "title": "{{ post.title }}",
     "content": "{{ post.content | strip_html | strip_newlines | remove: "	" | escape }}",
     "category": "{{ post.category }}",
